@@ -2,9 +2,25 @@
 __author__ = "730472840"
 
 word: str = input("Enter a 5-character word: ")
-character: str = input("Enter a single character: ")
-print("Searching for " + character + " in " + word)
 
+if len(word) < 5:
+    print("Error: Word must contain 5 characters")
+    exit()
+if len(word) > 5:
+    print("Error: Word must contain 5 characters")
+    exit()
+
+character: str = input("Enter a single character: ")
+
+if len(character) < 1:
+    print("Error: Character must be a single character.")
+    exit()
+
+if len(character) > 1:
+    print("Error: Character must be a single character.")
+    exit()
+
+print("Searching for " + character + " in " + word)
 matching_characters: int = 0
 
 if character == word[0]:
@@ -36,7 +52,9 @@ if matching_characters == 0:
 
 if matching_characters > 1:
     print(str(matching_characters) + " instances of " + character + " found in " + word)
-    
+
+
+
 
 
 
