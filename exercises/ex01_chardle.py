@@ -15,7 +15,7 @@ key_letter: str = str(input("Enter a single character: "))
 
 searching_statement: str = "Searching for " + key_letter + " in " + key_word
 if not key_letter.isalpha():
-    print("ERROR, INPUT IS NOT ALL LETTERS.")
+    print("ERROR, INPUT IS NOT A LETTERS.")
     exit()
 
 if len(key_letter) != 1:
