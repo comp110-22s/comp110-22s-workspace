@@ -8,9 +8,15 @@ if len(key_word) != 5:
     print("ERROR, WORD INPUT IS NOT 5 CHARACTERS IN LENGTH.")
     exit()
 
+if not key_word.isalpha():
+    print("ERROR, INPUT IS NOT ALL LETTERS.")
+    exit()
 key_letter: str = str(input("Enter a single character: "))
 
 searching_statement: str = "Searching for " + key_letter + " in " + key_word
+if not key_letter.isalpha():
+    print("ERROR, INPUT IS NOT ALL LETTERS.")
+    exit()
 
 if len(key_letter) != 1:
     print("ERROR, CHARACTER INPUT IS  ONE CHARACTER IN LENGTH.")
