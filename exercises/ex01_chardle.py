@@ -15,7 +15,7 @@ character: str = str(input("Enter a single character: "))
 character_length = len(character)
 
 if character_length == 1:
-    print("Searching for ", character, " in ", selected_word)
+    print("Searching for", character, "in", selected_word)
 else:
     print("Error: Character must be a single character")
     exit()
@@ -46,6 +46,6 @@ if character_instances == 0:
     print("No instances of", character, "found in", selected_word)
 else:
     if character_instances == 1:
-        print(character_instances, "instance found in", selected_word)
+        print(character_instances, "instance of", character, "found in", selected_word)
     else:
-        print(character_instances, "instances found in", selected_word)
+        print(character_instances, "instances of", character, "found in", selected_word)
