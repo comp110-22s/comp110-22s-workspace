@@ -45,4 +45,7 @@ if selected_word[4] == character:
 if character_instances == 0:
     print("No instances of ", character, " found in ", selected_word)
 else:
-    print(character_instances, " instances found in ", selected_word)
+    if character_instances == 1:
+        print(character_instances, "instance found in", selected_word)
+    else:
+        print(character_instances, " instances found in ", selected_word)
