@@ -23,29 +23,29 @@ else:
 character_instances = 0
 
 if selected_word[0] == character:
-    print(character, " found at index 0")
+    print(character, "found at index 0")
     character_instances = character_instances + 1
 
 if selected_word[1] == character:
-    print(character, " found at index 1")
+    print(character, "found at index 1")
     character_instances = character_instances + 1
 
 if selected_word[2] == character:
-    print(character, " found at index 2")
+    print(character, "found at index 2")
     character_instances = character_instances + 1
 
 if selected_word[3] == character:
-    print(character, " found at index 3")
+    print(character, "found at index 3")
     character_instances = character_instances + 1
 
 if selected_word[4] == character:
-    print(character, " found at index 4")
+    print(character, "found at index 4")
     character_instances = character_instances + 1
 
 if character_instances == 0:
-    print("No instances of ", character, " found in ", selected_word)
+    print("No instances of", character, "found in", selected_word)
 else:
     if character_instances == 1:
         print(character_instances, "instance found in", selected_word)
     else:
-        print(character_instances, " instances found in ", selected_word)
+        print(character_instances, "instances found in", selected_word)
