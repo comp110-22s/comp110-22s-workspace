@@ -5,21 +5,21 @@ ___author___ = "730405989"
 key_word: str = str(input("Enter a 5-character word: "))
 
 if len(key_word) != 5:
-    print("ERROR, WORD INPUT IS NOT 5 CHARACTERS IN LENGTH.")
+    print("Error: Word must contain 5 characters.")
     exit()
 
 if not key_word.isalpha():
-    print("ERROR, INPUT IS NOT ALL LETTERS.")
+    print("Error: Word must be made of 5 letters.")
     exit()
 key_letter: str = str(input("Enter a single character: "))
 
 searching_statement: str = "Searching for " + key_letter + " in " + key_word
 if not key_letter.isalpha():
-    print("ERROR, INPUT IS NOT A LETTERS.")
+    print("Error: Character must be a letter.")
     exit()
 
 if len(key_letter) != 1:
-    print("ERROR, CHARACTER INPUT IS  ONE CHARACTER IN LENGTH.")
+    print("Eror: Character must be a single character.")
     exit()
 else:
     print(searching_statement)
