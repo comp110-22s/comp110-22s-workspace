@@ -28,6 +28,7 @@ elif usercharacter == userword[4]:
     print(usercharacter + " found at index 4")
 else:
     print("No instance of " + usercharacter + " found in " + userword)
+    exit()
 
 x = int(userword.count(usercharacter))
 if x > 1:
