@@ -3,7 +3,6 @@
 __author__ = "730486473"
 
 userword = input("Enter a 5-character word: ")
-
 if len(userword) != 5:
     print("Error: Word must contain 5 characters")   
     exit()
