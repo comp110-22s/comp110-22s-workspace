@@ -2,6 +2,8 @@
 
 __author__ = "730486473"
 
+from encodings import search_function
+
 userword = input("Enter a 5-character word: ")
 
 if len(userword) != 5:
@@ -15,16 +17,20 @@ if len(usercharacter) != 1:
 
 print("Searching for " + usercharacter + " in " + userword)
 
-if usercharacter == userword[0]:
+new_word = str(userword + usercharacter)
+
+if usercharacter == new_word[0]:
     print(usercharacter + " found at index 0")
-if usercharacter == userword[1]:
+if usercharacter == new_word[1]:
     print(usercharacter + " found at index 1")
-if usercharacter == userword[2]:
+if usercharacter == new_word[2]:
     print(usercharacter + " found at index 2")
-if usercharacter == userword[3]:
+if usercharacter == new_word[3]:
     print(usercharacter + " found at index 3")
-if usercharacter == userword[4]:
+if usercharacter == new_word[4]:
     print(usercharacter + " found at index 4")
+if usercharacter == new_word[5]:
+    print("No instances of " + usercharacter + "found in " + userword)
 
 x = int(userword.count(usercharacter))
 print("{0} instances of ".format(x) + usercharacter)
