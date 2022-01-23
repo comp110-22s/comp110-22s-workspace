@@ -1,4 +1,4 @@
-"""EX01 - Chardle - A cute step toward Wordle"""
+"""EX01 - Chardle - A cute step toward Wordle."""
 
 __author__ = "730486473"
 
@@ -18,14 +18,16 @@ new_word = str(userword + usercharacter)
 
 if usercharacter == userword[0]:
     print(usercharacter + " found at index 0")
-if usercharacter == userword[1]:
+elif usercharacter == userword[1]:
     print(usercharacter + " found at index 1")
-if usercharacter == userword[2]:
+elif usercharacter == userword[2]:
     print(usercharacter + " found at index 2")
-if usercharacter == userword[3]:
+elif usercharacter == userword[3]:
     print(usercharacter + " found at index 3")
-if usercharacter == userword[4]:
+elif usercharacter == userword[4]:
     print(usercharacter + " found at index 4")
+else:
+    print("No instance of " + usercharacter + " found in " + userword)
 
 x = int(userword.count(usercharacter))
 if x > 1:
