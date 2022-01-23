@@ -16,19 +16,19 @@ print("Searching for " + usercharacter + " in " + userword)
 
 new_word = str(userword + usercharacter)
 
-if usercharacter == new_word[0]:
+if usercharacter == userword[0]:
     print(usercharacter + " found at index 0")
-if usercharacter == new_word[1]:
+if usercharacter == userword[1]:
     print(usercharacter + " found at index 1")
-if usercharacter == new_word[2]:
+if usercharacter == userword[2]:
     print(usercharacter + " found at index 2")
-if usercharacter == new_word[3]:
+if usercharacter == userword[3]:
     print(usercharacter + " found at index 3")
-if usercharacter == new_word[4]:
+if usercharacter == userword[4]:
     print(usercharacter + " found at index 4")
-if usercharacter == new_word[5]:
-    print("No instances of " + usercharacter + " found in " + userword)
-    exit()
 
 x = int(userword.count(usercharacter))
-print("{0} instances of ".format(x) + usercharacter)
+if x > 1:
+    print("{0} instances of ".format(x) + usercharacter + " found in " + userword)
+if x <= 1:
+    print("{0} instance of ".format(x) + usercharacter + " found in " + userword)
