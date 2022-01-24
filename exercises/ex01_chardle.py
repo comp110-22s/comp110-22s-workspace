@@ -66,6 +66,6 @@ if user_character_copies == 1:
 if user_character_copies >= 2:
     print(str(user_character_copies) + " instances of " + user_chosen_character + " found in " + user_chosen_word)
 
-# Here, the str command is used to change the int value of user_character_copies into a str,
-# which allows it to be combined with the other strs in this print command, regardless of if there are 2, 3, 4, or 5
+# Here, the str command is used to change the int value of user_character_copies into a str.
+# This change allows it to be combined with the other strs in this print command, regardless of if there are 2, 3, 4, or 5
 # copies of the character in the word.
