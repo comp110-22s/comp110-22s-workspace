@@ -3,25 +3,22 @@
 __author__ = "730466987"
 
 user_chosen_word: str = input("Enter a 5-character word: ")
-user_chosen_character: str = input("Enter a single character: ")
-user_character_copies: int = 0
-print("Searching for " + user_chosen_character + " in " + user_chosen_word)
-
-
-# pt. 4!!
 
 if len(user_chosen_word) != 5:
     print("Error: Word must contain 5 characters")
     quit()
 
+user_chosen_character: str = input("Enter a single character: ")
+
 if len(user_chosen_character) != 1:
     print("Error: Character must be a single character")
     quit()
 
-# End of section for pt. 4!!
+user_character_copies: int = 0
+print("Searching for " + user_chosen_character + " in " + user_chosen_word)
 
-# These if statements combine 2 different tasks: tracking which indices particular characters appear in,
-# AND counting how many times they appear in each of them.
+# The followning if statements combine 2 different tasks: tracking which indices particular characters appear in,
+# and counting how many times they appear in each of them.
 # These values later add up to be the # of copies of the character.
 
 if user_chosen_character == user_chosen_word[0]:
@@ -52,7 +49,7 @@ if user_chosen_character == user_chosen_word[4]:
     print(user_chosen_character + " found at index 4")
     user_character_copies = user_character_copies + 1
 
-# 4 + 1 = 5 copies
+# 4 + 1 = 5 copies, if the user chosen word includes the character in all of its indices.
 
 # Now that the program has counted how many copies of the input character there are,
 # it uses that value to pick one of the following if statements.
@@ -70,5 +67,5 @@ if user_character_copies >= 2:
     print(str(user_character_copies) + " instances of " + user_chosen_character + " found in " + user_chosen_word)
 
 # Here, the str command is used to change the int value of user_character_copies into a str,
-# which allows it to be combined with the other strs in this print command, regardless of if there are 2, 3, 4, or 5 copies
-# of the character in the word.
+# which allows it to be combined with the other strs in this print command, regardless of if there are 2, 3, 4, or 5
+# copies of the character in the word.
