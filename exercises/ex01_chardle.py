@@ -36,7 +36,7 @@ if match_maker == 2:
 match_maker = word.find(character, 3, 4)
 if match_maker == 3:
     print(character, "found at index 3")
-match_maker = word.find(character, 4, 4)
+match_maker = word.find(character, 4, 5)
 if match_maker == 4:
     print(character, "found at index 4")
 
