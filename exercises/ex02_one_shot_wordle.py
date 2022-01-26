@@ -7,16 +7,15 @@ word_retry: int = 0
 
 user_guess: str = input("What is your 6-letter guess? ")
 
+# python -m exercises.ex02_one_shot_wordle
 
 if len(user_guess) != 6:
-    print("That was not 6 letters!")
-    input("Try again: ")
     word_retry = word_retry + 1
     while word_retry <= 4:
-        if user_guess == secret_word:
-            print("Woo! You got it! ")
-            word_retry = word_retry + 1
-            quit()
+        print("That was not 6 letters!")
+        input("Try again: ")
+        word_retry = word_retry + 1
+
         if word_retry > 4:
             print("Not quite. Play again soon! ")
             quit()
