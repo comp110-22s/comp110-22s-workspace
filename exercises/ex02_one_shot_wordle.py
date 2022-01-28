@@ -10,6 +10,7 @@ while len(guess) != len(secret_word):
     guess = str(input(f"That was not {len(secret_word)} letters! Try again: "))
 # The user inputs their guess and it is stored as the variable guess.
 
+
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
