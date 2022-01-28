@@ -32,18 +32,17 @@ YELLOW_BOX: str = "\U0001F7E8"
 # python -m exercises.ex02_one_shot_wordle
 
 # During O.H.: 
-# How do I get the f-string format to work? And how do I get the "that was not 6 letters" statement and the "try again" statement 
-# on the same line?
-# Also, how do I make it so that if the user guesses the secret word, then they get out of the loop before using 5 tries?
+# How do I make it so that if the user guesses the secret word, then they get out of the loop before using 5 tries?
+# And how do I get the "that was not 6 letters" statement and the "try again" statement on the same line?
 
 retry: str = input("Try again: ")
 
 if len(user_guess) != len(secret_word):
-    print("That was not 6 letters!")
+    print(f"That was not 6 letters! { retry }")
     i = i + 1
     while i < 4:
         retry = input("Try again: ")
-        print("That was not 6 letters!")
+        print(f"That was not 6 letters! { retry }")
         i = i + 1
     if i >= 4:
         # and user_guess != secret_word:
