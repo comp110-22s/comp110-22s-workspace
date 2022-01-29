@@ -29,20 +29,22 @@ emoji: str = ""
 # Brackets = part of an index, whether there are int or str values in them; what matters more is the code preceding them,
 # since that tells the computer what to check the index of and what to do with the results!
 
+# How do I get it to swap the identities of the green and yellow boxes? Right now, they're flipped and I'm not sure
+# how to nest the while and if else statements to flip them without messing up the index read or white boxes.
+
 while guess_index < len(secret_word):
     if user_guess[guess_index] == secret_word[guess_index]:
         emoji = emoji + GREEN_BOX
     else:
         matching_character: bool = False
         alternate_indices: int = 0
-
         while matching_character is False and alternate_indices < len(secret_word):
             if alternate_indices == guess_index:
                 matching_character = True
             else:
                 alternate_indices = alternate_indices + 1
-        if matching_character is True:
-            emoji = emoji = YELLOW_BOX
+            if matching_character is True:
+                emoji = emoji = YELLOW_BOX
         emoji = emoji + WHITE_BOX
     guess_index = guess_index + 1
 print(emoji)
