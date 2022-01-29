@@ -33,6 +33,16 @@ while guess_index < len(secret_word):
     if user_guess[guess_index] == secret_word[guess_index]:
         emoji = emoji + GREEN_BOX
     else:
+        matching_character: bool = False
+        alternate_indices: int = 0
+
+        while matching_character is False and alternate_indices < len(secret_word):
+            if alternate_indices == guess_index:
+                matching_character = True
+            else:
+                alternate_indices = alternate_indices + 1
+        if matching_character is True:
+            emoji = emoji = YELLOW_BOX
         emoji = emoji + WHITE_BOX
     guess_index = guess_index + 1
 print(emoji)
