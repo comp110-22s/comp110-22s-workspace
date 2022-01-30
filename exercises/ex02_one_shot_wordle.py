@@ -12,13 +12,13 @@ while len(user_guess) != len(secret_word):
 
 # This command will be able to do 2 things at once: it will check the length of the user guess compared to the secret word REGARDLESS
 # of how long the secret word is, and it will get the user out of the error loop if they put in a guess the correct length, so
-# if they guess "python" at guess 3, they can get out of it and have their guiess evaluated by the yes/no responses below.
+# if they guess "python" at guess 3, they can get out of it and have their guess evaluated by the yes/no responses in lines 62 and 65.
 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-guess_index: int = 0
+gi: int = 0
 emoji: str = ""
 
 # The line below says that, while the guess index of the user guess is some int, if it matches the character at the same
@@ -26,32 +26,37 @@ emoji: str = ""
 # Every time, the guess_index value increases by 1, so the program moves through each index of each word and does the above steps
 # (which is also exactly what we want!!!).
 
-# Brackets = part of an index, whether there are int or str values in them; what matters more is the code preceding them,
-# since that tells the computer what to check the index of and what to do with the results!
+# Brackets = part of an index. You can put int or str values defining int values in them!
 
-# How do I get it to swap the identities of the green and yellow boxes? Right now, they're flipped and I'm not sure
-# how to nest the while and if else statements to flip them without messing up the index read or white boxes.
-
-while guess_index < len(secret_word):
-    if user_guess[guess_index] == secret_word[guess_index]:
+while gi < len(secret_word):
+    if user_guess[gi] == secret_word[gi]:
         emoji = emoji + GREEN_BOX
     else:
         matching_character: bool = False
-        alternate_indices: int = 0
-        while matching_character is False and alternate_indices < len(secret_word):
-            if alternate_indices == guess_index:
+        ai: int = 0
+        
+        while matching_character == False and ai < len(secret_word):
+            if secret_word[ai] == user_guess[gi]:
                 matching_character = True
             else:
-                alternate_indices = alternate_indices + 1
-            if matching_character is True:
-                emoji = emoji = YELLOW_BOX
-        emoji = emoji + WHITE_BOX
-    guess_index = guess_index + 1
+                ai = ai + 1
+        if matching_character == True:
+            emoji = emoji + YELLOW_BOX
+        else:
+            emoji = emoji + WHITE_BOX
+    gi = gi + 1
 print(emoji)
 
-# ANNND, because the emoji variable gets redefined every time, the results get added together each time
+# Because the emoji variable gets redefined every time, the results get added together each time
 # (like how i: int = 0
-# >>> i = i + 1 for 3 iterations = 3, and not 0 again ( 0 + 1 + 1 + 1)!)
+# >>> i = i + 1 for 3 iterations = 3, and not 0 again ( 0 + 1 + 1 + 1 = 3)!)
+
+# Also, previously, there was an issue with line 44, where the wrong indexes were defined. Before, they were set without str indices,
+# but this step checks whether or not the indices match, so it skipped a bunch of steps after that and messed up the printing of the
+# yellow and white boxes. 
+
+# Always check for the little things if there's an error in your code!!! Also, disregard the syntax errors with
+# the "==" signs in that while loop, Python is just being nitpicky, but those operators actually work fine in this program.
 
 if user_guess == secret_word:
     print("Woo! You got it! ")
