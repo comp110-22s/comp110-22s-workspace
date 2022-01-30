@@ -35,12 +35,12 @@ while gi < len(secret_word):
         matching_character: bool = False
         ai: int = 0
         
-        while matching_character == False and ai < len(secret_word):
+        while matching_character is False and ai < len(secret_word):
             if secret_word[ai] == user_guess[gi]:
                 matching_character = True
             else:
                 ai = ai + 1
-        if matching_character == True:
+        if matching_character is True:
             emoji = emoji + YELLOW_BOX
         else:
             emoji = emoji + WHITE_BOX
