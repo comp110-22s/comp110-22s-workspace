@@ -55,8 +55,7 @@ print(emoji)
 # but this step checks whether or not the indices match, so it skipped a bunch of steps after that and messed up the printing of the
 # yellow and white boxes. 
 
-# Always check for the little things if there's an error in your code!!! Also, disregard the syntax errors with
-# the "==" signs in that while loop, Python is just being nitpicky, but those operators actually work fine in this program.
+# Always check for the little things if there's an error in your code!!!
 
 if user_guess == secret_word:
     print("Woo! You got it! ")
