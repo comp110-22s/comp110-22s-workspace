@@ -1,14 +1,9 @@
 """EX02 - One Shot Wordle."""
-
 __author__ = "730486473"
-
 secret_word = "python"
-
 user_guess = input(f"What is your {len(secret_word)}-letter guess? ")
-
 while len(user_guess) != len(secret_word):
     user_guess = input(f"That was not {len(secret_word)} letters! Try again: ")
-
 while len(user_guess) == len(secret_word):
     x = int(0)
     final = ""
