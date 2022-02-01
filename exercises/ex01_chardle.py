@@ -14,24 +14,21 @@ if len(usercharacter) != 1:
 
 print("Searching for " + usercharacter + " in " + userword)
 
-new_word = str(userword + usercharacter)
-
 if usercharacter == userword[0]:
     print(usercharacter + " found at index 0")
-elif usercharacter == userword[1]:
+if usercharacter == userword[1]:
     print(usercharacter + " found at index 1")
-elif usercharacter == userword[2]:
+if usercharacter == userword[2]:
     print(usercharacter + " found at index 2")
-elif usercharacter == userword[3]:
+if usercharacter == userword[3]:
     print(usercharacter + " found at index 3")
-elif usercharacter == userword[4]:
+if usercharacter == userword[4]:
     print(usercharacter + " found at index 4")
-else:
-    print("No instance of " + usercharacter + " found in " + userword)
-    exit()
 
 x = int(userword.count(usercharacter))
+if x == 0:
+    print("No instances of " + usercharacter + " found in " + userword)
 if x > 1:
     print("{0} instances of ".format(x) + usercharacter + " found in " + userword)
-if x <= 1:
+if x == 1:
     print("{0} instance of ".format(x) + usercharacter + " found in " + userword)
