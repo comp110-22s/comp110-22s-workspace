@@ -1,19 +1,14 @@
 """One Shot Wordle!"""
 
-__author__ = 730474722
+__author__ = "730474722"
 
 """Providing the correct user input"""
-secret: str = "python"
+secret: str = "ears"
 intro: str = input(f"What is your {len(secret)}-letter guess? ")
-attempts: int = 0
 proceed: bool = False
-while attempts < 4 and (proceed is False):
+while (proceed is False):
     if len(secret) != len(intro):
-        intro = input("That was not 6-letters! Try again: ")
-        attempts += 1
-    elif attempts == 4:
-        print("Not quite. Play again soon!")
-        exit()
+        intro = input(f"That was not {len(secret)}-letters! Try again: ")
     else:
         proceed = True
 
@@ -51,7 +46,7 @@ if intro != secret:
         ci += 1 
     print(emojis)
     print("Not quite. Play again soon!")
-    exit()
+
 
 """Win"""
 if intro == secret:
