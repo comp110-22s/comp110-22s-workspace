@@ -1,6 +1,6 @@
 """Wordle -- This time using functions."""
 
-__author__ = 730405989
+__author__ = "730405989"
 
 
 def contains_char(test_word: str, test_letter: str) -> bool:
@@ -49,7 +49,8 @@ def input_guess(int_length: int) -> str:
     """Prompts user for input word."""
     input_word: str = str(input(f"Enter a {int_length} character word: "))
     while len(input_word) != int_length:
-        input_word: str = str(input(f"That was not {int_length} chars! Try again: "))
+        input_word = str(input(f"That wasn't {int_length} chars! Try again: "))
+    # Unsure if grader reads this part, but if you can add comments, add comment on how to store variable above without getting Safety Type Error####
     # Prompting input guess, and if guess not of proper length, reissue a prompt to reguess untill correct length########
     return input_word
 
@@ -57,24 +58,24 @@ def input_guess(int_length: int) -> str:
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     n = 1
-    d = True
-    # d is variable used to end loop if the guess is correct######
-    key_word: str = str('codes')
-    while n <= 6 and d:
+    lose = True
+    # lose is variable used to indicate if the guess is incorrect######
+    key_word: str = str("codes")
+    while n <= 6 and lose:
         print(f'=== Turn {n}/6 ===')
-        guessn: str = str(input_guess(len(key_word)))
+        guess_n: str = str(input_guess(len(key_word)))
         # guessn variable to store the input guess at the current guess######
-        print(emojified(guessn, key_word))
-        if guessn == key_word:
-            d = False
+        print(emojified(guess_n, key_word))               
+        if guess_n == key_word:
+            lose = False
         else: 
             n += 1
     
-    if not d:
-        print(f'You won in {n}/6 turns!')
+    if not lose:
+        print(f"You won in {n}/6 turns!")
     else: 
-        print(f'{n}/6 - Sorry, try again tomorrow!')
-    exit()
+        print("X/6 - Sorry, try again tomorrow!")
+    return
 
 
 if __name__ == "__main__":
