@@ -2,7 +2,7 @@
 
 __author__: str = "730466987"
 
-# This function set up the helper function for later in this program, where it was easier to call an index-scanning function than to do an index scan, by itself.
+# This function is set up for later in this program, as it will be easier to call an index-scanning function than to do an index scan by itself every time.
 
 
 def contains_char(input_guess: str, searched_character: str) -> bool:
@@ -16,12 +16,17 @@ def contains_char(input_guess: str, searched_character: str) -> bool:
         index = index + 1
     return False
 
-# Below, we used the same logic as that from EX02 to emojify the string, BUT, this time we had the contains_char function already set up, so we didn't need
-# to include all of those if-else statements and while loops.
+# Below, there is same logic as that from EX02 used to emojify the string, BUT, this time we had the contains_char function already set up, so there aren't
+# all of those if-else statements and while loops.
 
-# The guess got a green box IF contains_char detected it in the goal string AND in the right place in the index (In word? Yes; In proper index? Yes.),
-# It got a white box IF contains_char didn't detect it in the goal string at all (In word? NO; In proper index? NO.))
-# It got a yellow box if anything else happened (which, logically, could only happen if; In word? Yes; In proper index? NO.)
+# The guess gets a green box IF contains_char detects it in the goal string AND if it's in the right place in the index.
+# (In word? Yes; In proper index? Yes.),
+
+# It got a white box IF contains_char didn't detect it in the goal string at all.
+# (In word? NO; In proper index? NO.))
+
+# It got a yellow box if anything else happened (which, logically, could only happen if; 
+# In word? Yes; In proper index? NO.)
 
 # Note that it would be logically impossible for the character to NOT be in the word, but to still be in the right index of that word. :)
 
@@ -48,10 +53,9 @@ def emojified(guess_string: str, mystery_string: str) -> str:
         guess_index = guess_index + 1
     return emoji
 
+
 # The below function is important because it lets us check the length of the word in a shorter way than we did in EX02.
 # Rather than having a bunch of nested if-else statements and while loops, it can track the length of an input string by itself.
-
-# When used in combination with the contains_char function, this function gets the program 1 step closer to operating like Wordle!
 
 
 def input_guess(expected_length: int) -> str:
@@ -61,6 +65,15 @@ def input_guess(expected_length: int) -> str:
     while len(guessed_str) != expected_length:
         guessed_str = input(f"That wasn't {expected_length} chars! Try again: ")
     return guessed_str
+
+# Here, all of the functions defined above work together to create the main game!
+
+# main() keeps track of the number of turns, checks the length of the word and gives the correct error if the length is wrong, emojifies the word 
+# of the correct length, and acts accordingly with the bool value of user_win after each turn for ANY word length. :)
+
+# Note that the game turns are controlled by an if-else statement and start at the int value 1, so they should start correctly at 1 and not 
+# add another turn number after the correct word is guessed
+# (earlier, the reassignment statement was in the while loop by itself, and it had the add-on issue).
 
 
 def main() -> None:
@@ -86,6 +99,8 @@ def main() -> None:
         
     else:
         print("X/6 - Sorry, try again tomorrow!")
+
+# Lines 98-99 are also important because they declare this entire program as a module, so it can now be called without first importing it into the REPL!!
 
 
 if __name__ == "__main__":
