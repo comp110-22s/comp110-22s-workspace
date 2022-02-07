@@ -69,30 +69,24 @@ def input_guess(expected_length: int) -> str:
 def main() -> None:
     """This function is the entrypoint of the main game loop for this Wordle-like game."""
     secret_word: str = "codes"
-    game_turn: int = 0
+    game_turn: int = 1
     user_win: bool = False
     user_guess: str = ""
     
     while game_turn < 6 and user_win is False:
         print(f" === Turn {game_turn}/6 === ")
-        input_guess(len(secret_word))
+        user_guess = input_guess(len(secret_word))
 
-
-# In O.H., figure out what value to make user_guess so that it can work with the value given in input_guess and then 
-# get correctly emojified!
-      
-        user_guess += ???
-
-        emojified(user_guess, secret_word)
-        print(emojified)
+        print(emojified(user_guess, secret_word))
 
         if user_guess == secret_word:
-            user_win is True
-        else:
-            game_turn = game_turn + 1
+            user_win = True
+
+        game_turn = game_turn + 1
 
     if user_win is True:
-        print(f"You won in {game_turn} turns!")
+        print(f"You won in {game_turn}/6 turns!")
+        
     else:
         print("X/6 - Sorry, try again tomorrow!")
 
