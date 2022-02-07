@@ -62,9 +62,6 @@ def input_guess(expected_length: int) -> str:
         guessed_str = input(f"That wasn't {expected_length} chars! Try again: ")
     return guessed_str
 
-# start of pt. 4
-# Finish setting up + testing this skeleton!!
-
 
 def main() -> None:
     """This function is the entrypoint of the main game loop for this Wordle-like game."""
@@ -73,7 +70,7 @@ def main() -> None:
     user_win: bool = False
     user_guess: str = ""
     
-    while game_turn < 6 and user_win is False:
+    while game_turn <= 6 and user_win is False:
         print(f" === Turn {game_turn}/6 === ")
         user_guess = input_guess(len(secret_word))
 
@@ -81,8 +78,8 @@ def main() -> None:
 
         if user_guess == secret_word:
             user_win = True
-
-        game_turn = game_turn + 1
+        else:
+            game_turn = game_turn + 1
 
     if user_win is True:
         print(f"You won in {game_turn}/6 turns!")
@@ -90,8 +87,6 @@ def main() -> None:
     else:
         print("X/6 - Sorry, try again tomorrow!")
 
-# Activate this code once the rest of pt. 4 is done!!
-# if __name__ "__main__":
-#    main()
 
-# end of pt. 4
+if __name__ == "__main__":
+    main()
