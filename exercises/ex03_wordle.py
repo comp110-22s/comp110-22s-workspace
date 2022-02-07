@@ -1,4 +1,4 @@
-"""EX02 - Creating a Wordle-like program."""
+"""EX03 - Creating a Wordle-like program."""
 
 __author__: str = "730466987"
 
