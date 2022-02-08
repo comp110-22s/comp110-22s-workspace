@@ -50,7 +50,7 @@ def input_guess(guess_length: int) -> str:
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    secret_word: str = "codes"
+    secret_word: str = "cocks"
     guess_length: int = len(secret_word)
     turn: int = 1  # counter variable for turn
 
