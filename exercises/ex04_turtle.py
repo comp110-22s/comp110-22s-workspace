@@ -1,6 +1,6 @@
-"""Sunset Over the Ocean. \n Now With Sharks!"""
+"""Sunset Over the Ocean. Now With Sharks!"""
 
-__author__ = "730474722" 
+__author__ = "730474722"
 
 from random import randint
 from turtle import Turtle, colormode, done
@@ -89,7 +89,7 @@ def semi_circle(x: float, y: float) -> None:
     return
     
 
-def stars(x: float, y: float, size: int) -> None:
+def stars(x: int, y: int, size: int) -> None:
     """Stars for the night sky."""
     star: Turtle = Turtle()
     star.speed(200)

@@ -73,17 +73,17 @@ from turtle import Turtle, colormode, done
 #     j += 1
 # done()
 
-jaws: Turtle = Turtle()
-jaws.penup()
-jaws.goto(0, -100)
-jaws.pendown()
-jaws.pencolor("black")
-jaws.fillcolor("#A5A3B3")
-jaws.begin_fill()
-i: int = 0
-jaws.forward(40)
-jaws.left(130)
-jaws.forward(40)
-jaws.goto(0, -100)
-jaws.end_fill
-done()
+# jaws: Turtle = Turtle()
+# jaws.penup()
+# jaws.goto(0, -100)
+# jaws.pendown()
+# jaws.pencolor("black")
+# jaws.fillcolor("grey")
+# jaws.begin_fill()
+# i: int = 0
+# jaws.forward(40)
+# jaws.left(130)
+# jaws.forward(40)
+# jaws.goto(0, -100)
+# jaws.end_fill()
+# done()
