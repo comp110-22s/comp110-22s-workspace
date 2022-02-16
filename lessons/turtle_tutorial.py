@@ -24,7 +24,7 @@ bob.goto(0, 0)
 bob.pendown()
 bob.speed(90)
 i: int = 0
-side_length: int = 300
+side_length: float = 300
 while (i < 300):
     bob.forward(side_length)
     bob.left(105)
