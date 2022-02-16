@@ -7,7 +7,6 @@ from turtle import Turtle, colormode, done
 colormode(255)
 
 
-
 def main() -> None:
     """ The entrypoint of my scene."""
     square(0, 0, "#7B98EB")
@@ -20,7 +19,10 @@ def main() -> None:
     while i < 100:
         stars(randint(-350, 350), randint(120, 350), randint(1, 10))
         i += 1
-    # TODO: Call the procedures you define and pass your Turtle(s) as an argument.
+    i = 0
+    while i < 3:
+        sharks(randint(-350, 350), randint(-100, -200), randint(20, 40))
+        i += 1
     done()
     return
 
@@ -113,7 +115,7 @@ def sharks(x: int, y: int, size: int):
     """Draws 'sharks' to liven up the water"""
     jaws: Turtle = Turtle()
     jaws.penup()
-    jaws.goto(0, -100)
+    jaws.goto(x, y)
     jaws.pendown()
     jaws.pencolor("black")
     jaws.fillcolor("#A5A3B3")
@@ -121,9 +123,9 @@ def sharks(x: int, y: int, size: int):
     jaws.forward(40)
     jaws.left(130)
     jaws.forward(40)
-    jaws.goto(0, -100)
+    jaws.goto(x, y)
     jaws.end_fill
-    done()
+    return
 
 
 if __name__ == "__main__":
