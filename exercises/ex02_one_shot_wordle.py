@@ -8,7 +8,7 @@ guess: str = str(input(f"What is your {len(secret_word)} letter guess? "))
 # Set up input string for guess to insure it is proper length and only made up of letters.############
 
 while ((len(guess) != len(secret_word)) or not guess.isalpha()):
-    guess: str = str(input(f"That was not {len(secret_word)} letters! Try again: "))
+    guess = (input(f"That was not {len(secret_word)} letters! Try again: "))
 
 counter = int(0)
 

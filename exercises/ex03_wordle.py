@@ -60,7 +60,7 @@ def main() -> None:
     n = 1
     lose = True
     # lose is variable used to indicate if the guess is incorrect######
-    key_word: str = str("codes")
+    key_word: str = str("naomi")
     while n <= 6 and lose:
         print(f'=== Turn {n}/6 ===')
         guess_n: str = str(input_guess(len(key_word)))
