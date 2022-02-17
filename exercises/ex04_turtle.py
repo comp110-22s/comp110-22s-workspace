@@ -1,4 +1,4 @@
-"""Ski mountain."""
+"""A feeble attempt at drawing a basketball court."""
 
 __author__ = "730405989"
 
