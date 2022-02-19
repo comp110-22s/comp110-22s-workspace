@@ -49,5 +49,3 @@ else:
         print(character_instances, "instance of", character, "found in", selected_word)
     else:
         print(character_instances, "instances of", character, "found in", selected_word)
-
-print(len(python))
