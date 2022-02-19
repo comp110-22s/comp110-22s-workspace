@@ -5,13 +5,16 @@ __author__: str = "730466987"
 # Testing command: python -m pytest exercises/ex05
 
 from exercises.ex05.utils import only_evens
+from exercises.ex05.utils import sub
+from exercises.ex05.utils import concat
 
 
 def test_only_evens_empty() -> None:
     t1: list[int] = list()
     assert(only_evens) == t1
 
-# In O.H., how would I get this function to work?
+
+# In O.H., how would I get this function (t2) to work?
 
 
 def test_only_evens_floats() -> None:
@@ -23,19 +26,24 @@ def test_only_evens_four_odds() -> None:
     t3: list[int] = list()
     assert(only_evens) == t3
 
+
 # for pt. 2
 
-# def ________ -> None:
-#     ta: ______
-#     assert(only_evens) == ta
 
-# def ________ -> None:
-#     tb: ______
-#     assert(only_evens) == tb
+def test_sub_negative_start() -> None: 
+    ta = sub[0]
+    assert(sub)  == ta
 
-# def ________ -> None:
-#     tc: ______
-#     assert(only_evens) == tc
+
+def test_sub_over_index() -> None:
+    tb: ______
+    assert(only_evens) == tb
+
+
+def test_sub_empty_list() -> None:
+    tc: ______
+    assert(sub) == tc
+
 
 # for pt. 3
 
