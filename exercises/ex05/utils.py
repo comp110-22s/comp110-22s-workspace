@@ -29,7 +29,6 @@ def sub(fullset: list, start: int, end: int) -> list:
 
 
 def concat(list1: list, list2: list) -> list:
-    i = 0
     sumlist = list()
     if len(list1) != 0:
         for items1 in list1:
