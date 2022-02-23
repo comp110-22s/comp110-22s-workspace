@@ -8,20 +8,20 @@ colormode(255)
 
 
 def main() -> None:
-    """ The entrypoint of my scene."""
-    square(0, 0, "#7B98EB")
-    square(-355, 0, "#7B98EB")
-    square(-355, -355, "#2660FF")
-    square(0, -355, "#2660FF")
-    semi_circle(160, 0)
-    scribble_waves(-170, 0)
+    """The entrypoint of my scene."""
+    square(0.0, 0.0, "#7B98EB")
+    square(-355.0, 0.0, "#7B98EB")
+    square(-355.0, -355.0, "#2660FF")
+    square(0.0, -355.0, "#2660FF")
+    semi_circle(160.0, 0.0)
+    scribble_waves(-170.0, 0.0)
     i: int = 0
     while i < 100:
         stars(randint(-350, 350), randint(120, 350), randint(1, 10))
         i += 1
-    sharks(300, -100, 35)
-    sharks(310, -160, 30)
-    sharks(260, -130, 40)
+    sharks(300.0, -100.0, 35)
+    sharks(310.0, -160.0, 30)
+    sharks(260.0, -130.0, 40)
     done()
     return
 
@@ -89,7 +89,7 @@ def semi_circle(x: float, y: float) -> None:
     return
     
 
-def stars(x: int, y: int, size: int) -> None:
+def stars(x: float, y: float, size: int) -> None:
     """Stars for the night sky."""
     star: Turtle = Turtle()
     star.speed(200)
