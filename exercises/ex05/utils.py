@@ -5,7 +5,7 @@ __author__: str = "730466987"
 # REPL command for testing: python -m pytest exercises/exercises/ex05
 
 # To do: fix functions 1 and 2, THEN for the tests, follow the format and make new tests for the edge cases that are too hard.
-# Also, for 2/22/22 go through functions 2 and 3 to check for any syntax errors; the logic of the body blocks make sense but you may be able to shorten them.
+# Also, for 2/23/22 go through functions 2 and 3 to check for any syntax errors; the logic of the body blocks make sense but you may be able to shorten them.
 
 
 def only_evens(input: list[int]) -> list[int]:

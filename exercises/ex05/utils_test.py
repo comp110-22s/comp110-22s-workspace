@@ -4,9 +4,7 @@ __author__: str = "730466987"
 
 # Testing command: python -m pytest exercises/ex05
 
-from exercises.ex05.utils import only_evens
-from exercises.ex05.utils import sub
-from exercises.ex05.utils import concat
+from exercises.ex05.utils import only_evens, sub, concat
 
 
 def test_only_evens_empty() -> None:
@@ -28,13 +26,11 @@ def test_only_evens_all_evens() -> None:
 
 # In O.H., see if you can get the below test to work with a negative index!
 
-# Also, see if the test in line 77 is worthwhile, or if it needs to be swapped for another test functionality! (is it ok that it uses
-# the same body block code as the actuan function?)
-
 
 def test_sub_negative_start() -> None: 
     "This test makes sub start from index point 0 of a list with a negative start value. (Use case.)"
-    assert sub(-1, 2) == 
+    negative_list: list[int] = [1, 2, 3]
+    assert sub(negative_list(-1), -1, 2) == [1]
 
 
 def test_sub_over_index() -> None:
@@ -74,7 +70,8 @@ def test_concat_different_lengths() -> None:
 
     assert concat(long_a_list, short_b_list) == final_list
 
-def test_concat_one_float() -> None:
-    "This test prevents concat from printing a list that includes a float value. (Use case.)"
-    mixed_list: list[float] = [1, 2.0, 3, 4]
-    assert only_evens(mixed_list) != [1, 2.0, 3, 4]
+def test_concat_same_order() -> None:
+    "This test allows concat to add the items in list_b onto the end of list_a without putting them in numerical order. (Use case.)"
+    list_a: list[int] = [1, 2, 4]
+    list_b: list[int] = [3, 5]
+    assert only_evens(list_a, list_b) == [1, 2, 4, 3, 5]
