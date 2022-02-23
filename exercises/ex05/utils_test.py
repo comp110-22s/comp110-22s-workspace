@@ -24,19 +24,17 @@ def test_only_evens_all_evens() -> None:
     perfect_list: list[int] = [2, 4, 6, 8, 10]
     assert only_evens(perfect_list) == [2, 4, 6, 8, 10]
 
-# In O.H., see if you can get the below test to work with a negative index!
-
 
 def test_sub_negative_start() -> None: 
     "This test makes sub start from index point 0 of a list with a negative start value. (Use case.)"
     negative_list: list[int] = [1, 2, 3]
-    assert sub(negative_list(-1), -1, 2) == [1]
+    assert sub(negative_list, -1, 2) == [1, 2]
 
 
 def test_sub_over_index() -> None:
     "This test makes sub end at the last index point of a list when stop_index is greater than the length of the list. (Use case.)"
     short_list: list[int] = [0, 1, 2]
-    assert only_evens(short_list) == [0, 1, 2]
+    assert sub(short_list, 0, 3) == [0, 1, 2]
 
 
 def test_sub_empty_list() -> None:
@@ -45,12 +43,11 @@ def test_sub_empty_list() -> None:
     assert sub(no_list, 0, 1) == list()
 
 
-
 def test_concat_empty_a() -> None:
     "This test makes concat return only the items in list_b if list_a is empty. (Edge case.)"
     empty_a_list: list[int] = list()
     full_b_list: list[int] = [1, 2, 3]
-    assert concat(empty_a_list, full_b_list) == full_b_list
+    assert concat(empty_a_list, full_b_list) == [1, 2, 3]
 
 
 def test_concat_different_lengths() -> None:
@@ -70,8 +67,9 @@ def test_concat_different_lengths() -> None:
 
     assert concat(long_a_list, short_b_list) == final_list
 
+
 def test_concat_same_order() -> None:
     "This test allows concat to add the items in list_b onto the end of list_a without putting them in numerical order. (Use case.)"
     list_a: list[int] = [1, 2, 4]
     list_b: list[int] = [3, 5]
-    assert only_evens(list_a, list_b) == [1, 2, 4, 3, 5]
+    assert concat(list_a, list_b) == [1, 2, 4, 3, 5]

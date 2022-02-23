@@ -22,15 +22,17 @@ def only_evens(input: list[int]) -> list[int]:
 
 def sub(a_list: list[int], start_index: int, stop_index: int) -> list[int]:
     """This function returns the items in a given string at the specified index."""
-    subset: list[int] = list()
-    start: int = a_list[start_index]
-    stop: int = len(a_list)
-    i: int = 0
 
-    subset.append(start)
+    if start_index < 0:
+        start_index = 0
+    if stop_index > len(a_list):
+        stop_index = len(a_list)
+
+    subset: list[int] = list()
+    i: int = start_index
 
     while i < stop_index:
-        subset.append(stop)
+        subset.append(a_list[i])
         i += 1
     return subset
     
@@ -44,7 +46,7 @@ def concat(list_a: list[int], list_b: list[int]) -> list[int]:
         list_c.append(list_a[iterations])
         iterations += 1
 
-    while iterations < len(list_a):
-        list_c.append(list_a[iterations])
+    while iterations < len(list_b):
+        list_c.append(list_b[iterations])
         iterations += 1
-    return list_a
+    return list_c
