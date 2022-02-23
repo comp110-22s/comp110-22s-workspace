@@ -4,6 +4,7 @@ __author__ = "730405989"
 
 
 def only_evens(a: list) -> list:
+    """Function that returns even values."""
     even_list: list = list()
     for number in a:
         if number % 2 == 0:
@@ -12,6 +13,7 @@ def only_evens(a: list) -> list:
 
 
 def sub(fullset: list, start: int, end: int) -> list:
+    """Function that takes subset based on start and end indexes."""
     subset: list = list()
     if start < 0:
         start = 0
@@ -29,6 +31,7 @@ def sub(fullset: list, start: int, end: int) -> list:
 
 
 def concat(list1: list, list2: list) -> list:
+    """Function combining 2 lists."""
     sumlist = list()
     if len(list1) != 0:
         for items1 in list1:
@@ -37,14 +40,3 @@ def concat(list1: list, list2: list) -> list:
         for items2 in list2:
             sumlist.append(items2)
     return sumlist
-
-
-def main() -> None:
-    print(only_evens([1, 2, 3]))
-    print(only_evens([1, 5, 3]))
-    print(only_evens([4, 4, 4]))
-    a_list = [10, 20, 30, 40]
-    print(sub(a_list, 1, 7))
-
-
-main()

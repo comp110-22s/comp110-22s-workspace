@@ -50,3 +50,9 @@ def test_oneempty() -> None:
     empty1: list = []
     reg2: list = [1, 2, 5]
     assert concat(empty1, reg2) == [1, 2, 5]
+
+
+def test_concat() -> None:
+    a_list: list = [1, 4, -5, 7, 100]
+    b_list: list = [3, 6]
+    assert concat(a_list, b_list) == [1, 4, -5, 7, 100, 3, 6]
