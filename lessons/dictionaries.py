@@ -20,3 +20,20 @@ schools.pop("Duke")
 # Testing for the existence of a key:
 is_duke_present: bool = "Duke" in schools
 print(f"Duke is present: {is_duke_present}")
+
+# Reassigning a key-value pair
+schools["UNC"] = 20000
+schools["NCSU"] += 200
+
+print(schools)
+
+
+# More practice:
+# print(schools["UNCC"])
+
+# Example looping over the keys of a dict
+# for key in schools:
+#     print(f"Key: {key} -> Value: {schools[key]}")
+
+for school in schools:
+    print(f"Key: {school} -> Value: {schools[school]}")
