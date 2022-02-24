@@ -2,10 +2,7 @@
 
 __author__: str = "730466987"
 
-# Testing command: python -m pytest exercises/ex05
-
 from exercises.ex05.utils import only_evens, sub, concat
-
 
 def test_only_evens_empty() -> None:
     """This test makes only_evens return an empty list when the given list is empty. (Edge case.)"""
