@@ -4,6 +4,7 @@ __author__: str = "730466987"
 
 from exercises.ex05.utils import only_evens, sub, concat
 
+
 def test_only_evens_empty() -> None:
     """This test makes only_evens return an empty list when the given list is empty. (Edge case.)"""
     empty_list: list[int] = list()
