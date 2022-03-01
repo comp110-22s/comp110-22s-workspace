@@ -20,3 +20,5 @@ if __name__ == "__main__":
     main()
 else:
     print(f"helpers.py was imported: {__name__}.")
+
+# Here, name != main, so the else statement above is printed.
