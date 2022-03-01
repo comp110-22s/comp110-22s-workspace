@@ -2,8 +2,6 @@
 
 __author__: str = "730466987"
 
-# The command to run your tests is python, from exercises.ex06.dictionary import (function name)
-
 
 def invert(input: dict[str, str]) -> dict[str, str]:
     """This function inverts the keys and values of the input list."""
@@ -28,43 +26,49 @@ def invert(input: dict[str, str]) -> dict[str, str]:
 # It has been told that, for every key value, if it has appeared before, then a KeyError should be raised (which is another command).
 # If not, though, it's told to reverse the values and continue to the next key in the dictionary.
 
-# Beginning of pt. 2:
-
-# In O.H.: How can I edit the code on line 32 to say "if this key is the most common in the list..."?
-
 
 def favorite_color(colors: dict[str, str]) -> str:
     """This function returns the most common key in its input list (in this case, each key is the name of a different color)."""
     favorite: str = ""
+    popularity: dict[str, int] = dict()
+    frequency: int = 0
 
     for key in colors:
-        # first, count the instances of each color in the dictionary. Each key should have its own "popularity" value!
-        popularity: str = colors[key]
-        
-        # then, see which key has the highest counting variable.
-        if popularity > len(colors):
-            favorite += colors[key]
+        if colors[key] in popularity:
+            popularity[colors[key]] += 1
+        else:
+            popularity[colors[key]] = 1
 
+    for key in popularity:
+        if popularity[key] > frequency:
+            frequency = popularity[key]
+            favorite = key
     return favorite
        
-# End of pt. 2
+# "Favorite" is made to be filled in with the final result key,
+# "Popularity" tracks the values being worked through, and
+# "Frequency" tracks the number of times a key appears in "popularity".
+
+# Remember: colors[key] is the VALUE of colors at a specific key, so it can have repeated values!
+
+# Here, the first for-in loop tracks the count of each key, and the second loop tracks the highest count.
+# As the 2nd for-in loop goes through each key, it checks to see if the previous key had a higher frequency value than the current one.
+# Once it moves through all of the keys in a list, it returns the name of the one with the highest frequency value.
 
 
-# Beginning of pt. 3:
-
-# In O.H. on Monday, check the logic of this function!
-
-
-def count(count_list: list[str]) -> dict[str, str]:
-    """This function tracks the frequency of each input key value. Each value tracks the number of times that the key value appears."""
-    final_dict: dict[str, str] = dict()
+def count(count_list: list[str]) -> dict[str, int]:
+    """This function tracks the frequency of each input key value."""
+    counted: dict[str, int] = dict()
     i: int = 0
 
     while i < len(count_list):
-        if count_list[i] in count_list:
-            i += 1
+        if count_list[i] in counted:
+            counted[count_list[i]] += 1
         else:
-            i = 1
-    return final_dict
+            counted[count_list[i]] = 1
+        i += 1
 
-# End of pt. 3
+    return counted
+
+# The above function uses a similar loop as favorite_color to track the frequency of each item in the list, and it functionally does the same thing
+# as that function, just from a list to a dictionary, instead of a dictionary to a dictionary :).
