@@ -27,7 +27,7 @@ def invert(x: dict[str, str]):
 
 
 def favorite_color(x: dict[str, str]):
-    """Returns the most frequent color"""
+    """Returns the most frequent color."""
     color_list = list()
     color_leaderboard: dict[str, int] = {}
     i: int = 0

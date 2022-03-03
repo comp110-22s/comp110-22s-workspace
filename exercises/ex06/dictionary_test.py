@@ -1,4 +1,4 @@
-""""Testing for the dicionary exercise."""
+"""Testing for the dicionary exercise."""
 __author__ = "730474722"
 
 from dictionary import invert, favorite_color, count
@@ -12,7 +12,7 @@ def test_invert_with_single_key() -> None:
 
 
 def test_invert_with_multiple_keys() -> None:
-    """Tests the invert function when it has multiple keys"""
+    """Tests the invert function when it has multiple keys."""
     lol = {"pen": "ren", "towel": "man", "cat": "dog", "lpopk": "plolok"}
     assert invert(lol) == {"ren": "pen", "man": "towel", "dog": "cat", "plolok": "lpopk"}
 
@@ -61,6 +61,6 @@ def test_count_with_one_str_value() -> None:
 
 def test_count_back_and_forth() -> None:
     """Returns the appropriate count when two str values go back and forth."""
-    christmas: list[str] = ["santa","claus", "santa", "claus", "santa", "claus", "santa", "claus"]
+    christmas: list[str] = ["santa", "claus", "santa", "claus", "santa", "claus", "santa", "claus"]
     assert count(christmas) == {"santa": 4, "claus": 4}
     
