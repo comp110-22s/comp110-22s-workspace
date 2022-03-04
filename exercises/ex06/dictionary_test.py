@@ -42,9 +42,9 @@ def test_favorite_color_when_equal_numbers_meet() -> None:
 
 
 def test_favorite_color_with_multiple_items() -> None:
-    """Returns the most reffered to color in a given dictionary."""
-    colors = {"couch": "yellow", "sun": "yellow", "man": "green", "dog": "yellow", "cow": "green"}
-    assert favorite_color(colors) == "yellow"
+    """Returns the most referred to color in a given dictionary."""
+    colors = {"man": "green", "food": "yellow", "earth": "green", "sun": "yellow"}
+    assert favorite_color(colors) == "green"
 
 
 def test_count_with_multiple_higher_scores() -> None:

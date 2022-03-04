@@ -2,7 +2,7 @@
 __author__ = "730474722"
 
 
-def invert(x: dict[str, str]):
+def invert(x: dict[str, str]) -> dict[str, str]:
     """Inverts the key and the value in a given dictionary."""
     key_list = list()
     value_list = list()
@@ -26,7 +26,7 @@ def invert(x: dict[str, str]):
     return inverted_dict
 
 
-def favorite_color(x: dict[str, str]):
+def favorite_color(x: dict[str, str]) -> str:
     """Returns the most frequent color."""
     color_list = list()
     color_leaderboard: dict[str, int] = {}
@@ -57,7 +57,7 @@ def favorite_color(x: dict[str, str]):
     return compact_color[i]
 
 
-def count(count: list[str]):
+def count(count: list[str]) -> dict[str, int]:
     """Returns a dictionary where each key is a unique value in a given list that is counted."""
     count_leaderboard: dict[str, int] = {}
     for values in count:
@@ -69,7 +69,3 @@ def count(count: list[str]):
             count_leaderboard[count[i]] += 1
         i += 1
     return count_leaderboard
-
-
-clause: list[str] = ["santa", "santa", "santa", "santa"]
-print(count(clause))
