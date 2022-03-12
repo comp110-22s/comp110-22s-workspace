@@ -1,4 +1,4 @@
-"""Dictionary related utility functions."""
+"""Dictionary related some utility functions."""
 
 __author__ = "730466987"
 
