@@ -59,5 +59,4 @@ def head(input_table: dict[str, list[str]], rows: int) -> dict[str, list[str]]:
             rows += 1
         final_table += input_table[__?__]
 
-
     return final_table
