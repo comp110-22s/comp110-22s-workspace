@@ -44,8 +44,6 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
     return result
 
-
-
 # In O.H. on 3/22, see what you need to the 2nd loop to make the identities of each value line up correctly!
 # What can you do with "rows" there?
 
@@ -57,16 +55,14 @@ def head(input_table: dict[str, list[str]], rows: int) -> dict[str, list[str]]:
     for column in input_table:
         first_row_values: list[str] = []
 
-        while rows <= len(column):
-            first_row_values += rows
+        for rows in ___?___:
+            first_row_values += ___?___
 
-        first_row_values = final_table[column]
+        first_row_values += final_table[column]
 
     return final_table
 
-# The "select" function works logically, but not in the way it's supposed to! You still need to fix it.
-
-# REMEMBER: this function should work after "head" is corrected!! Check through it's logic, just in case, though.
+# REMEMBER: this function should work after "head" is corrected!! Check through its logic, just in case, though.
 
 
 def select(input_table: dict[str, list[str]], new_column_names: list[str]) -> dict[str, list[str]]:
