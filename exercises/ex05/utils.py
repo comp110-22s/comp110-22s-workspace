@@ -17,7 +17,6 @@ def only_evens(input: list[int]) -> list[int]:
 
 def sub(a_list: list[int], start_index: int, stop_index: int) -> list[int]:
     """This function returns the items in a given string at the specified index."""
-
     if start_index < 0:
         start_index = 0
     if stop_index > len(a_list):
