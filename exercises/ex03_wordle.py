@@ -1,6 +1,5 @@
 """EX03 - Wordle."""
 
-
 __author__ = "730486473"
 
 green_box = str("\U0001F7E9")
@@ -8,7 +7,7 @@ yellow_box = str("\U0001F7E8")
 white_box = str("\U00002B1C")
 
 
-def contains_char(char_many, char_one) -> bool:
+def contains_char(char_many: str, char_one: str) -> bool:
     """A function to find matching characters in the user guess (ug) and secret word (sw)."""
     assert len(char_one) == 1
     if char_one in char_many:
@@ -17,7 +16,7 @@ def contains_char(char_many, char_one) -> bool:
         return(False)
 
 
-def emojified(guess, secret) -> str:
+def emojified(guess: str, secret: str) -> str:
     """This function is to "emojify" our user's guess"""
     assert len(guess) == len(secret)
     x: int = 0
@@ -64,4 +63,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-    
