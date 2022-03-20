@@ -44,7 +44,7 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
     return result
 
-# In O.H. on 3/22, see what you need to the 2nd loop to make the identities of each value line up correctly!
+# In O.H. on 3/21, see what you need to the 2nd loop to make the identities of each value line up correctly!
 # What can you do with "rows" there?
 
 
@@ -62,7 +62,7 @@ def head(input_table: dict[str, list[str]], rows: int) -> dict[str, list[str]]:
 
     return final_table
 
-# REMEMBER: this function should work after "head" is corrected!! Check through its logic, just in case, though.
+# REMEMBER: these function should work after "head" is corrected!! Check through their logic just in case, though.
 
 
 def select(input_table: dict[str, list[str]], new_column_names: list[str]) -> dict[str, list[str]]:
@@ -73,8 +73,6 @@ def select(input_table: dict[str, list[str]], new_column_names: list[str]) -> di
         combined_table[column] += input_table[column]
 
     return combined_table
-
-# In O.H., also make sure that this function works after the above 2 functions have been fixed!
 
 
 def concat(dict_1: dict[str, list[str]], dict_2: dict[str, list[str]]) -> dict[str, list[str]]:
@@ -93,19 +91,18 @@ def concat(dict_1: dict[str, list[str]], dict_2: dict[str, list[str]]) -> dict[s
     return final_dict
 
 
-# Figure out how to make the logic on line 109 sound! How do you say "if it's not in the list, add it; if it is in the list, increase its value in the list by 1?"
+# Also in O.H., how can I make a counting variable to go in the if-else statement?
 
 def count(finding_frequencies: list[str]) -> dict[str, int]:
     """This function will take a list and produce a dictionary where each key is an item in the list, and each value is the frequency of that item in the list."""
     frequencies: dict[str, int] = {}
     i: int = 0
 
-    while i <= len(finding_frequencies):
-        if finding_frequencies[i] in frequencies:
-            finding_frequencies[i] += 1
-            i += 1
-        else:
-            finding_frequencies[i] = 1
-            i += 1
+    if finding_frequencies[i] in frequencies:
+        frequencies[i] += 1
+        i += 1
+    else:
+        finding_frequencies[i] = 1
+        i += 1
 
     return frequencies
