@@ -19,7 +19,16 @@
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
     "python.testing.pytestEnabled": true,
-    "python.testing.pytestArgs": [],
+    "python.testing.pytestArgs": [
+        "lessons"
+    ],
     "python.envFile": "${workspaceFolder}/.env",
     "python.analysis.typeCheckingMode": "basic",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./lessons",
+        "-p",
+        "*_test.py"
+    ],
 }
