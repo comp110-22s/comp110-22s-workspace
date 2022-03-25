@@ -6,8 +6,8 @@ names: list[str] = ["Max", "Ben", "Josh", "McKnight"]
 print("while output:")
 i: int = 0
 while i < len(names):
-    name: str = names[i]
-    print(name)
+    game: str = names[i]
+    print(game)
     i += 1
 
 print("for..in output:")

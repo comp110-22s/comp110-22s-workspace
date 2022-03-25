@@ -6,11 +6,12 @@ __author__ = "730465187"
 def only_evens(nums: list[int]) -> list[int]:
     """Returns only the evens in a list."""
     i: int = 0
+    new_list: list[int] = list()
     while i < len(nums):
-        if nums[i] % 2 != 0:
-            nums.pop(i)
+        if nums[i] % 2 == 0:
+            new_list.append(nums[i])
         i += 1
-    return nums
+    return new_list
 
 
 def sub(nums: list[int], start: int, end: int) -> list[int]:
@@ -20,8 +21,8 @@ def sub(nums: list[int], start: int, end: int) -> list[int]:
     if start < 0:
         i = 0
     if end > len(nums) - 1:
-        end = len(nums) - 1
-    while i <= end:
+        end = len(nums)
+    while i < end:
         new_list.append(nums[i])
         i += 1
     return new_list
