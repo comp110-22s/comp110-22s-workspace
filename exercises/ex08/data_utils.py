@@ -116,3 +116,26 @@ def count(finding_frequencies: list[str]) -> dict[str, int]:
             frequencies[column] = 1
 
     return frequencies
+
+# for the part after adding count...
+
+# this function should take in the returned dicts from count SEPARATELY,
+# loop through each dict,
+# and find the key with the highest (most common) int in the input dict
+# it should add the keys with the highest number values to a separate list[dict[str, int]].
+
+
+def most_common(input_dict: dict[str, int]) -> list[dict[str, int]]:
+    """This function returns the key with the highest value for each list item in the input dictionary."""
+    most_common_values: list[dict[str, int]] = []
+    highest_number_value: dict[str, int]
+
+    # the function should start by taking in the entire dict and looping through each key
+    # then it should add the key with the highest numerical value to the return dict
+    # this process can be repeated with each of the 4 dicts from analysis.ipynb SEPARATELY
+
+    for key in input_dict:
+        if input_dict[key] > ____:
+            highest_number_value += input_dict[key]
+
+    return most_common_values
