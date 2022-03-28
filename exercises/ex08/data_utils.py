@@ -123,14 +123,12 @@ def count(finding_frequencies: list[str]) -> dict[str, int]:
 # it should add the keys with the highest number values to a separate list[dict[str, int]].
 
 
-# In O.H., figure out how to make this function add the new highest value to the return dictionary if key 2 appears more than key 1 (for example).
+# In O.H., figure out why this function is printing multiple values for prior_exp and value, but not comp_major!
 
-# Also, remember that this function should only loop through the selected data in analysis.ipynb, but not all of it!
-# (if this function is set up correctly, then it shouldn't matter how many keys there are, but remember to make changes accordingly in analysis.ipynb!)
-
-def most_common(input_dict: dict[str, int]) -> list[dict[str, int]]:
-    """This function returns the key with the highest value for each list item in the input dictionary."""
-    most_common_values: list[dict[str, int]] = []
+def most_common(input_dict: dict[str, int]) -> str:
+    """This function returns the key with the highest value for each key in the input dictionary."""
+    most_common_value: str = ""
+    int_value: int = 0
 
     # the function should start by taking in the entire dict and looping through each key
     # then it should add the key with the highest numerical value to the return dict
@@ -138,7 +136,7 @@ def most_common(input_dict: dict[str, int]) -> list[dict[str, int]]:
     # this process can be repeated with each of the 3 dicts from analysis.ipynb SEPARATELY
 
     for key in input_dict:
-        if input_dict[key] > # (the highest key in input_dict that has been encountered so far):
-            most_common_values += input_dict[key]
-
-    return most_common_values
+        if input_dict[key] > int_value:
+            int_value = input_dict[key]
+            most_common_value = key
+    return most_common_value
