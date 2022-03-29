@@ -117,23 +117,16 @@ def count(finding_frequencies: list[str]) -> dict[str, int]:
 
     return frequencies
 
-# this function should take in the returned dicts from count SEPARATELY,
+# this function should take in the returned dicts from count, separately,
 # loop through each dict,
-# and find the key with the highest (most common) int in the input dict
-# it should add the keys with the highest number values to a separate list[dict[str, int]].
+# find the key with the highest (most common) int value in the input dict,
+# and it should add the keys with the highest number values to a blank str value.
 
-
-# In O.H., figure out why this function is printing multiple values for prior_exp and value, but not comp_major!
 
 def most_common(input_dict: dict[str, int]) -> str:
     """This function returns the key with the highest value for each key in the input dictionary."""
     most_common_value: str = ""
     int_value: int = 0
-
-    # the function should start by taking in the entire dict and looping through each key
-    # then it should add the key with the highest numerical value to the return dict
-
-    # this process can be repeated with each of the 3 dicts from analysis.ipynb SEPARATELY
 
     for key in input_dict:
         if input_dict[key] > int_value:
