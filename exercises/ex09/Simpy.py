@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-# from typing import Union
+from typing import Union
 
 __author__ = "730466987"
 
@@ -10,9 +10,9 @@ __author__ = "730466987"
 class Simpy:
     values: list[float]
 
-    def __init__(self, values: list[float]):
+    def __init__(self, new_object: list[float]):
         """Declares a new Simpy object."""
-        self.values = values
+        self.values = new_object
     
     def __str__(self) -> str:
         """Converts a Simpy object to a str object."""
@@ -56,9 +56,39 @@ class Simpy:
 
         return summed
 
-    # def __add__(lhs: Union[Simpy, float], rhs: Union[Simpy, float]) -> Simpy:
+    def __add__(self, lhs: Union [float, Simpy], rhs: Union[float, Simpy]) -> Simpy:
+        """Adds Simpy and float objects."""
+        result: Simpy = (lhs + rhs)
 
-    # def __pow__(lhs: Union[Simpy, float], rhs: Union[Simpy, float]) -> Simpy:
+        if lhs == Simpy and rhs == Simpy:
+            assert len(lhs) == len(rhs)
+            added: Simpy = 
+
+        elif lhs == float and rhs == Simpy:
+            
+
+        elif lhs == Simpy and rhs == float:
+
+
+        else:
+
+        if isinstance(lhs, Simpy and rhs, Simpy):
+            for i in range(0, len(self.items)):
+                # For the code above, know that it's basically the same as using a for-in loop to go through each item in the list.
+                result.append(self.items[i] + " " + rhs.items[i])
+                # The above line of code says that self and rhs are each applied to StrArray objects, and the "i"s line up their lists so that
+                # self[1], for example, can only be added to rhs[1].
+                # Also, there is a space added in the middle for easier reading of the print object.
+        
+        return StrArray(result)
+
+        return result
+
+
+    def __pow__(lhs: Union[Simpy, float], rhs: Union[Simpy, float]) -> Simpy:
+
+
+
 
     # def __eq__ (mask: list[bool], object_one: Union[Simpy, float]) -> list[bool]:
 
