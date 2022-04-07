@@ -18,30 +18,30 @@ class Simpy:
         """Converts a Simpy object to a str object."""
         return f"Simpy: ({self.values})"
 
-# In O.H.: figure out how to properly mutate "filling" so that it repeats "fill_number" times!
-
     def fill(self, filling: float, fill_number: int) -> None:
         """Fills a Simpy object's list with a set number of repetitions of a set value."""
-        return filling ** fill_number
+        i: int = 0
+        self.values = []
 
+        while i < fill_number:
+            self.values.append(filling)
+            i += 1
 
-# Also inn O.H.: how do you get "step" to be the equal amount of distance between each item in the input list, even if it increases by a fraction?
-
-    def arange(self, start: float, stop: float, step: Union[None, float]????????):
+    def arange(self, start: float, stop: float, step: float = 1.0) -> None:
         """Returns the values within a set input, increasing by "step" value each time."""
-        step = (stop / start)
         assert step != 0.0
         
-        result: list = [start]
-        i: float = 1.0
+        result: list = []
+        i: float = start + step
+        current: float = start
 
-        while i < stop:
-            self.values. append(start + step)
-            step += 1.0
-            i += 1
-        return result
-
-# NOTE: once you fix "arange," this function should return 45 instead of 55!
+        result.append(start)
+        
+        while i != stop:
+            current += step
+            result.append(current)
+            i += step
+        self.values = result
 
     def sum(self) -> float:
         """Sums all of the items in each index of the input Simpy."""
@@ -128,10 +128,10 @@ class Simpy:
 
         return greater_than
 
-    def __getitem__(self, rhs: int) -> float:
-        """Overload that returns the subscription notation of the unput float."""
-        result: float = 0.0
+    # def __getitem__(self, rhs: int) -> float:
+    #     """Overload that returns the subscription notation of the unput float."""
+    #     result: float = 0.0
 
-        for i in self:
-            result += self.values[rhs]
-        return result
+    #     for i in self:
+    #         result += self.values[rhs]
+    #     return result
