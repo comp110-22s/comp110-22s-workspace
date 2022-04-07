@@ -26,7 +26,7 @@ class Point:
         return f"({self.x} {self.y})"
 
     def __repr__(self) -> str:
-        """This function produces a str representtion of a Point, just like '__str__.'"""
+        """This function produces a str representtion of a Point, just like '__str__'."""
         return f"Point({self.x}, {self.y})"
 
     def __mul__(self, factor: float) -> Point:

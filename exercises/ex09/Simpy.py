@@ -21,10 +21,10 @@ class Simpy:
     def fill(self, filling: float, fill_number: int) -> None:
         """Fills a Simpy object's list with a set number of repetitions of a set value."""
         i: float = 0.0
-        self.values: list = []
+        final_list: list = []
 
         while i < fill_number:
-            self.values.append(filling)
+            final_list.append(filling)
             i += 1.0
 
 # In O.H.: how do you get "step" to be the equal amount of distance between each item in the input list, even if it increases by 0.25? (like it does with "fractional")
@@ -56,39 +56,37 @@ class Simpy:
 
         return summed
 
-    def __add__(self, lhs: Union [float, Simpy], rhs: Union[float, Simpy]) -> Simpy:
-        """Adds Simpy and float objects."""
-        result: Simpy = (lhs + rhs)
+# In O.H., figure out why the Jupyter notebook says that Simpy objects are not defined for this method!
 
-        if lhs == Simpy and rhs == Simpy:
-            assert len(lhs) == len(rhs)
-            added: Simpy = 
+    def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Adds Simpy and float objects together."""
+        result: list[float] = []
 
-        elif lhs == float and rhs == Simpy:
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            for i in range(0, len(self.values)):
+                result.append(self.values[i] + rhs.values[i])
             
+        if isinstance(rhs, float):
+            for i in range(0, len(self.values)):
+                result.append(self.values[i] + rhs)
 
-        elif lhs == Simpy and rhs == float:
+        return Simpy(result)
 
+    def __pow__(self, rhs: Union[Simpy, float]) -> Simpy:
+        """Raises Simpy and float objects to the values of each other."""
+        result: list[float] = []
 
-        else:
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            for i in range(0, len(self.values)):
+                result.append(self.values[i] ** rhs.values[i])
+            
+        if isinstance(rhs, float):
+            for i in range(0, len(self.values)):
+                result.append(self.values[i] ** rhs)
 
-        if isinstance(lhs, Simpy and rhs, Simpy):
-            for i in range(0, len(self.items)):
-                # For the code above, know that it's basically the same as using a for-in loop to go through each item in the list.
-                result.append(self.items[i] + " " + rhs.items[i])
-                # The above line of code says that self and rhs are each applied to StrArray objects, and the "i"s line up their lists so that
-                # self[1], for example, can only be added to rhs[1].
-                # Also, there is a space added in the middle for easier reading of the print object.
-        
-        return StrArray(result)
-
-        return result
-
-
-    def __pow__(lhs: Union[Simpy, float], rhs: Union[Simpy, float]) -> Simpy:
-
-
-
+        return Simpy(result)
 
     # def __eq__ (mask: list[bool], object_one: Union[Simpy, float]) -> list[bool]:
 
