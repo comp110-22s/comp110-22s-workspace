@@ -88,8 +88,54 @@ class Simpy:
 
         return Simpy(result)
 
-    # def __eq__ (mask: list[bool], object_one: Union[Simpy, float]) -> list[bool]:
+    def __eq__(self, rhs: Union[Simpy, float]) -> list[bool]:
+        """Overload that returns the matching values between an input Simpy and float."""
+        matching: list[bool] = []
 
-    # def __gt__()
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            for i in range(0, len(self.values)):
+                if self.values[i] == rhs.values[i]:
+                    matching.append(True)
+                else:
+                    matching.append(False)
+            return matching
 
-    # def __getitem__()
+        if isinstance(rhs, float):
+            for i in range(0, len(self.values)):
+                if self.values[i] == rhs:
+                    matching.append(True)
+                else:
+                    matching.append(False)
+            return matching
+
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """"Overload that returns the values in an input value that are greater than the items at the same indices in rhs."""
+        greater_than: list[bool] = []
+
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            for i in range(0, len(self.values)):
+                if self.values[i] > rhs.values[i]:
+                    greater_than.append(True)
+                else:
+                    greater_than.append(False)
+            return greater_than
+
+        if isinstance(rhs, float):
+            for i in range(0, len(self.values)):
+                if self.values[i] > rhs:
+                    greater_than.append(True)
+                else:
+                    greater_than.append(False)
+            return greater_than
+
+        return greater_than
+
+    def __getitem__(self, rhs: int) -> float:
+        """Overload that returns the subscription notation of the unput float."""
+        result: float = 0.0
+
+        for i in self:
+            result += self.values[rhs]
+        return result
