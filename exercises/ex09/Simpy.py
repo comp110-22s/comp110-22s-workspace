@@ -128,10 +128,6 @@ class Simpy:
 
         return greater_than
 
-    # def __getitem__(self, rhs: int) -> float:
-    #     """Overload that returns the subscription notation of the unput float."""
-    #     result: float = 0.0
-
-    #     for i in self:
-    #         result += self.values[rhs]
-    #     return result
+    def __getitem__(self, rhs: int) -> float:
+        """Overload that returns the subscription notation of the input float."""
+        return self.values[rhs]
