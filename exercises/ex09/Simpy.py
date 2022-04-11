@@ -128,15 +128,20 @@ class Simpy:
 
         return greater_than
 
-# For the function below: the list of bools needs to be tracked in a separate list that is THEN evaluated for the getitem range that was asked for!
-
     def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
         """Overload that returns the subscription notation of the input float."""
         if isinstance(rhs, int):
             return self.values[rhs]
-        elif isinstance(rhs, list[bool]):
+        else:
             list_output: list[float] = []
             
-            # list_output.append(rhs[i])
+            i: int = 0
+
+            while i < len(rhs):
+                if rhs[i] is True:
+                    list_output.append(self.values[i])
+                    i += 1
+                else:
+                    i += 1
             
             return Simpy(list_output)
