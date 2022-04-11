@@ -9,6 +9,7 @@ __author__ = "730466987"
 
 class Simpy:
     """This class manipulates input numerical data like a simpler version of the NumPy library."""
+    # Don't forget to include a DocString describing new classes from now on!
     values: list[float]
 
     def __init__(self, new_object: list[float]):
@@ -44,8 +45,13 @@ class Simpy:
             i += step
         self.values = result
 
+        # Here, "step" doesn't change itself, but it is changed depending on the value of "start."
+        # This way, it is set as +1 by default, but if it needs to be changed, then it can be.
+
+        # Also, note that the "current" variable is necessary here because it removes some of the abstraction from where the function is in its while loop!
+
     def sum(self) -> float:
-        """Sums all of the items in each index of the input Simpy."""
+        """Sums all of the items in the input Simpy."""
         summed: float = 0.0
         i: int = 0
 
@@ -84,6 +90,9 @@ class Simpy:
                 result.append(self.values[i] ** rhs)
 
         return Simpy(result)
+
+        # __pow__ is supposed to look similar to __add__, because they follow the same rules for which operators to use on the input objects,
+        # whether they are Simpy or float objects.
 
     def __eq__(self, rhs: Union[Simpy, float]) -> list[bool]:
         """Overload that returns the matching values between an input Simpy and float."""
@@ -146,3 +155,7 @@ class Simpy:
                     i += 1
             
             return Simpy(list_output)
+
+        # Note that this function returns a float if rhs is an int, but it returns a Simpy if rhs is a list[bool].
+        # This difference is important because the operator overload masks for both types of objects, but in different ways,
+        # depending on the input object's type.
