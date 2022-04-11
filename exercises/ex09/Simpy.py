@@ -8,7 +8,7 @@ __author__ = "730466987"
 
 
 class Simpy:
-    "This class works with list[float] values and masks."
+    """This class manipulates input numerical data like a simpler version of the NumPy library."""
     values: list[float]
 
     def __init__(self, new_object: list[float]):
@@ -17,7 +17,7 @@ class Simpy:
     
     def __str__(self) -> str:
         """Converts a Simpy object to a str object."""
-        return f"Simpy({self.values}))"
+        return f"Simpy({self.values})"
 
     def fill(self, filling: float, fill_number: int) -> None:
         """Fills a Simpy object's list with a set number of repetitions of a set value."""
