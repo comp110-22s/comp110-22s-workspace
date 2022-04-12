@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Union
 
+
 class StrArray:
     items: list
 
@@ -11,7 +12,7 @@ class StrArray:
     def __repr__(self) -> str:
         return f"StrArray{self.items})"
 
-    def __add__(self, rhs:  Union[str, StrArray]) -> StrArray:
+    def __add__(self, rhs: Union[str, StrArray]) -> StrArray:
         """Add is a vectorized operation that applies to all items. 
         When rhs is a str, it is concatenated to every item in a  new StrArray."""
         if isinstance(rhs, str):
