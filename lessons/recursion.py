@@ -36,6 +36,7 @@ class Node:
 
 
 # Simplified ver. with Optional[None]:
+
 def sum(node: Optional[Node]) -> int:
     """Sums the data in a chain of Nodes."""
     if node is None:
