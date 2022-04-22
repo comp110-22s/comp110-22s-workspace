@@ -38,20 +38,32 @@ def last(head: Optional[Node]) -> int:
     """Returns the last value of a Linked List, or raises a ValueError if the list is empty."""
     if head is None:
         raise ValueError("last cannot be called with None")
+    elif head.next is None:
+        return head.data
     else:
         return last(head.next)
 
-        # How do I write this so that the program goes to the LAST node in the chain, and NOT the first?
-
+# In O.H.: How do I resolve the TypeErrorwith head.data being included as an int parameter on line 55?
 
 def value_at(head: Optional[Node], index: int) -> int:
     """Returns the data of the node found at the given index, if it exists."""
     if head is None:
         raise IndexError("Index does not exist in the list.")
+    elif index == 0:
+        return head.data
     else:
         return value_at(head.data, index)
 
-# def max()
+# Also in O.H.: do I need to add an elif statement below to make a list of each data value and THEN find the max from that? 
+# Or will it auomatically be interpreted if I leave it as return max(head)?
+
+
+def max(head: Node) -> int:
+    """Returns the highest data value in the Linked List."""
+    if head is None:
+        raise ValueError("Cannot call mas with None")
+    else:
+        return max(head)
 
 # def linkify()
 
