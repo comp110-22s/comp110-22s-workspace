@@ -39,15 +39,20 @@ def last(head: Optional[Node]) -> int:
     if head is None:
         raise ValueError("last cannot be called with None")
     else:
-        return None
+        return last(head.next)
 
-# NOTE: the error in line 42 is there on purpose, you need to change the function definition while you work to have it make sense.
+        # How do I write this so that the program goes to the LAST node in the chain, and NOT the first?
+
 
 def value_at(head: Optional[Node], index: int) -> int:
     """Returns the data of the node found at the given index, if it exists."""
+    if head is None:
+        raise IndexError("Index does not exist in the list.")
+    else:
+        return value_at(head.data, index)
 
-def max()
+# def max()
 
-def linkify()
+# def linkify()
 
-def scale()
+# def scale()
