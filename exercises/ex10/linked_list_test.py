@@ -1,9 +1,11 @@
 """Tests for linked list utils."""
 
 import pytest
-from exercises.ex10.linked_list import Node, last, value_at
+from typing import Optional
 
-# and also import max, linkify, scale (put those lines together after these functions have been written!)
+from exercises.ex10.linked_list import Node, last, value_at, max, linkify
+
+# scale (put those lines together after these functions have been written!)
 
 # Testing command in the terminal: python -m pytest exercises/ex10/linked_list_test.py
 
@@ -25,23 +27,20 @@ def test_non_empty_tail() -> None:
 
 # for value_at
 
-# In O.H.: what is the correct syntax for getting that specific function call to raise an index error? I understand it, conceptually, but I forget the actual syntax.
 
-
-def test_value_at_none_index() -> None:
-    """The input index does not exist."""
-    wrong_index: Node = (Node(1, Node(2, Node(3, None))))
-    assert value_at(wrong_index, 5) == raise IndexError("Index does not exist in the list.")
+def test_value_at_zero_index() -> None:
+    """The input index is at 0, the 2nd base case."""
+    zero_index: Node = (Node(1, Node(2, Node(3, None))))
+    assert value_at(zero_index, 0) == 1
 
 
 def test_value_at_index_one() -> None:
     """The index of the function is 1."""
-    one_index = Node(2, Node(4, Node(6, None)))
+    one_index: Node = Node(2, Node(4, Node(6, None)))
     assert value_at(one_index, 1) == 4
 
 # for max
 
-# These tests should work fine after the main function is fixed!
 
 def test_max_equal_values() -> None:
     """Multiple values are the max."""
@@ -57,18 +56,19 @@ def test_max_one_max() -> None:
 # for linkify
 
 
-# def test_linkify_empty_list() -> None:
-#     """The input list is empty."""
-#     return None
+def test_linkify_empty_list() -> None:
+    """The input list is empty."""
+    return None
 
 
-# def test_linkify_demo_list() -> None:
-#     """The input list is properly converted into a chain of Nodes."""
-#     demo_list: list[int] = [1, 2, 3]
-#     assert linkify(demo_list) == Node(1, Node(2, Node(3, None)))
+def test_linkify_demo_list() -> None:
+    """The input list is properly converted into a chain of Nodes."""
+    demo_list: list[int] = [1, 2, 3]
+    demo_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
+    assert linkify(demo_list) == demo_node
 
 
-# # for pt. 5
+# for scale
 
 # def test_???______
 

@@ -23,6 +23,9 @@ class Node:
         else:
             return f"{self.data} -> {self.next}"
 
+# Remember that each recursion needs to go through specific steps to get closer to a base case! If specific steps aren't followed in each elif statement, you will either get
+# and infinite loop or the "None" base case (which may miss returning the desired value).
+
 
 def is_equal(lhs: Optional[Node], rhs: Optional[Node]) -> bool:
     """Tests if two Linked Lists have the same values and order as one another."""
@@ -32,6 +35,9 @@ def is_equal(lhs: Optional[Node], rhs: Optional[Node]) -> bool:
         return False
     else:
         return is_equal(lhs.next, rhs.next)
+
+# This function says that, if head is not none, it will return the data point right before head is None.
+# The else statement is there to ensure recursion through the whole Linked List up to that point.
 
 
 def last(head: Optional[Node]) -> int:
@@ -43,6 +49,11 @@ def last(head: Optional[Node]) -> int:
     else:
         return last(head.next)
 
+# This function says that, if the 2 base cases aren't met (if and elif), then it will go to "else" and decrease the index by 1 for every 1 data point that it moves through
+# in the Linked List.
+
+# This way, the index can maintain its relative position in a Node of any length.
+
 
 def value_at(head: Optional[Node], index: int) -> int:
     """Returns the data of the node found at the given index, if it exists."""
@@ -51,23 +62,60 @@ def value_at(head: Optional[Node], index: int) -> int:
     elif index == 0:
         return head.data
     else:
+        index = index - 1
         return value_at(head.next, index)
 
 
-def max(head: Node) -> int:
+# With max, there are 2 base cases and 2 recursive cases.
+
+# The first "if" checks for the most basic base case: the whole Node being None.
+
+# The 1st "elif" says, if the first base case isn't true, there is a second base case if the Node only contains 1 data point. In that case, you only have 1 data point to work with,
+# so that's the point that gets returned.
+
+# The 2nd "elif" checks the most recent data point in the Node against the ENTIRE rest of the Node to see if it has the greatest value.
+
+# And, the "else" case just tells the program to recur again for each subsequent data point.
+
+# Overall, for a Node like "1 -> 3 -> 2 -> None," the function will recur 2 separate times. It will check "1" against the rest of the Linked List, then "3".
+# Once it hits 3, it will check it against the rest of the list ("2" and None) and print 3 as the greatest int value.
+
+def max(head: Optional[Node]) -> int:
     """Returns the highest data value in the Linked List."""
     if head is None:
         raise ValueError("Cannot call max with None.")
+    elif head.next is None:
+        return head.data
+    elif head.data > max(head.next):
+        return head.data
     else:
-        return max(head)
+        return max(head.next)
+
+# In O.H.: how do I prevent linkify from making an infinite loop in the "else" statement?
 
 
-# def linkify(head: list[int]) -> Optional[Node]:
-#     """Converts a list of ints into a Linked List of Node values in the same order."""
+def linkify(head: list[int]) -> Optional[Node]:
+    """Converts a list of ints into a Linked List with the same values in the same order."""
+    if head is None:
+        return None
+    else:
+        new_node: Optional[Node] = Node(0, None)
+        i: int = 0
+
+        while len(head) != new_node.next:
+            new_node.data = head[i]
+            new_node.next = linkify(head)
+            i += 1
+        return new_node
+
+
+# def scale(head: Optional[Node], factor: int) -> Optional[Node]:
 #     if head is None:
-#         return linkify(head.data)
-#     else:
+#         return None
+#     elif head.data < factor:
+#         scaled_node: Optional[Node] = Node(0, None)
         
-# How do you convert from a list to adding data to a chain of Nodes? (check the notes from last TShursday's lecture!!)
-
-# def scale()
+#         scaled_node.data = head.data
+#         return scaled_node
+#     else:
+#         return scaled_node
