@@ -43,7 +43,6 @@ def last(head: Optional[Node]) -> int:
     else:
         return last(head.next)
 
-# In O.H.: How do I resolve the TypeErrorwith head.data being included as an int parameter on line 55?
 
 def value_at(head: Optional[Node], index: int) -> int:
     """Returns the data of the node found at the given index, if it exists."""
@@ -52,19 +51,23 @@ def value_at(head: Optional[Node], index: int) -> int:
     elif index == 0:
         return head.data
     else:
-        return value_at(head.data, index)
-
-# Also in O.H.: do I need to add an elif statement below to make a list of each data value and THEN find the max from that? 
-# Or will it auomatically be interpreted if I leave it as return max(head)?
+        return value_at(head.next, index)
 
 
 def max(head: Node) -> int:
     """Returns the highest data value in the Linked List."""
     if head is None:
-        raise ValueError("Cannot call mas with None")
+        raise ValueError("Cannot call max with None.")
     else:
         return max(head)
 
-# def linkify()
+
+# def linkify(head: list[int]) -> Optional[Node]:
+#     """Converts a list of ints into a Linked List of Node values in the same order."""
+#     if head is None:
+#         return linkify(head.data)
+#     else:
+        
+# How do you convert from a list to adding data to a chain of Nodes? (check the notes from last TShursday's lecture!!)
 
 # def scale()
