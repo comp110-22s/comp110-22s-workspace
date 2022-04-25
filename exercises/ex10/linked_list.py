@@ -93,29 +93,27 @@ def max(head: Optional[Node]) -> int:
 
 # In O.H.: how do I prevent linkify from making an infinite loop in the "else" statement?
 
+# the if condition could also be written as "not input_list."
 
-def linkify(head: list[int]) -> Optional[Node]:
+
+def linkify(input_list: list[int]) -> Optional[Node]:
     """Converts a list of ints into a Linked List with the same values in the same order."""
-    if head is None:
+    if len(input_list) == 0:
         return None
     else:
         new_node: Optional[Node] = Node(0, None)
-        i: int = 0
 
-        while len(head) != new_node.next:
-            new_node.data = head[i]
-            new_node.next = linkify(head)
-            i += 1
+        new_node.data = input_list[0]
+        new_node.next = linkify(input_list[1:])
+
         return new_node
 
 
-# def scale(head: Optional[Node], factor: int) -> Optional[Node]:
-#     if head is None:
-#         return None
-#     elif head.data < factor:
-#         scaled_node: Optional[Node] = Node(0, None)
-        
-#         scaled_node.data = head.data
-#         return scaled_node
-#     else:
-#         return scaled_node
+def scale(head: Optional[Node], factor: int) -> Optional[Node]:
+    """Returns a linked list version of head where each data point is repeated "factor" times."""
+    scaled_node: Optional[Node] = Node(0, None)
+
+    if head is None:
+        return None
+    else:
+        return scaled_node

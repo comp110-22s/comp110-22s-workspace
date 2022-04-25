@@ -3,9 +3,9 @@
 import pytest
 from typing import Optional
 
-from exercises.ex10.linked_list import Node, last, value_at, max, linkify
+from exercises.ex10.linked_list import Node, last, value_at, max, linkify, is_equal
 
-# scale (put those lines together after these functions have been written!)
+# scale...................................
 
 # Testing command in the terminal: python -m pytest exercises/ex10/linked_list_test.py
 
@@ -65,11 +65,20 @@ def test_linkify_demo_list() -> None:
     """The input list is properly converted into a chain of Nodes."""
     demo_list: list[int] = [1, 2, 3]
     demo_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
-    assert linkify(demo_list) == demo_node
+    assert is_equal(linkify(demo_list), demo_node)
 
 
 # for scale
 
-# def test_???______
+# # Check on these tests once the whole function is corrected!
 
-# def test_???______
+# def test_scale_factor_zero() -> None:
+#     """The factor parameter = 0."""
+#     zero_factor_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
+#     empty_node: Optional[Node] = Node(0, Node(0, Node(0, None)))
+#     assert is_equal(scale(zero_factor_node), empty_node)
+
+# def test_scale_factor_one() -> None:
+#     """The factor parameter = 2."""
+#     scale_test_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
+#     assert scale(scale_test_node, 2) == 2 -> 4 -> 6 -> None
