@@ -91,9 +91,15 @@ def max(head: Optional[Node]) -> int:
     else:
         return max(head.next)
 
-# In O.H.: how do I prevent linkify from making an infinite loop in the "else" statement?
 
-# the if condition could also be written as "not input_list."
+# With the function below, the if statement is setting up a base case, in case the input list is empty.
+# The else statement is saying that, if the list is not empty, each recursion should add the next unscanned node to the list,
+# and to worry about the rest of the list values in the next recursion.
+
+# Also, note that the slice notation on line 112 is telling the program to ignore everything from index 1 to the end of the list.
+# With each recursion, the value at index 1 gets moved back, so it will always apply to the next value in the list, until it hits the last item and 1 = None.
+
+# The if condition on line 106 could also be written as "not input_list" and mean the same thing as "if the list is empty."
 
 
 def linkify(input_list: list[int]) -> Optional[Node]:
