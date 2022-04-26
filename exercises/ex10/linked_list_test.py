@@ -56,7 +56,8 @@ def test_max_one_max() -> None:
 
 def test_linkify_empty_list() -> None:
     """The input list is empty."""
-    return None
+    empty_list: list[int] = []
+    assert linkify(empty_list) is None
 
 
 def test_linkify_demo_list() -> None:
