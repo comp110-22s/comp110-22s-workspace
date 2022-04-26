@@ -1,5 +1,7 @@
 """EX02 - One shot Wordle exercise."""
 
+# Testing function: python -m exercises.ex02.ex02_one_shot_wordle.py
+
 __author__ = "730466987"
 
 secret_word: str = "python"

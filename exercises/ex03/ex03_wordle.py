@@ -4,6 +4,8 @@ __author__: str = "730466987"
 
 # This function is set up for later in this program, as it will be easier to call an index-scanning function than to do an index scan by itself every time.
 
+# Testing function: python -m exercises.ex03.ex03_wordle.py
+
 
 def contains_char(input_guess: str, searched_character: str) -> bool:
     """This function exists to check the indices of the word for any instance of the character, and to return a corresponding bool value."""

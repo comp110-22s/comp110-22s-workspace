@@ -1,5 +1,7 @@
 """EX01 - Chardle exercise."""
 
+# Testing function: python -m exercises.ex01.ex01_chardle.py
+
 __author__ = "730466987"
 
 user_chosen_word: str = input("Enter a 5-character word: ")
@@ -8,14 +10,17 @@ if len(user_chosen_word) != 5:
     print("Error: Word must contain 5 characters")
     quit()
 
+
 user_chosen_character: str = input("Enter a single character: ")
 
 if len(user_chosen_character) != 1:
     print("Error: Character must be a single character")
     quit()
 
+
 user_character_copies: int = 0
-print("Searching for " + user_chosen_character + " in " + user_chosen_word)
+
+print(f"Searching for {user_chosen_character} in {user_chosen_word}")
 
 # The followning if statements combine 2 different tasks: tracking which indices particular characters appear in,
 # and counting how many times they appear in each of them.
