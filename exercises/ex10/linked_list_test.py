@@ -3,9 +3,7 @@
 import pytest
 from typing import Optional
 
-from exercises.ex10.linked_list import Node, last, value_at, max, linkify, is_equal
-
-# scale...................................
+from exercises.ex10.linked_list import Node, last, value_at, max, linkify, is_equal, scale
 
 # Testing command in the terminal: python -m pytest exercises/ex10/linked_list_test.py
 
@@ -70,15 +68,16 @@ def test_linkify_demo_list() -> None:
 
 # for scale
 
-# # Check on these tests once the whole function is corrected!
 
-# def test_scale_factor_zero() -> None:
-#     """The factor parameter = 0."""
-#     zero_factor_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
-#     empty_node: Optional[Node] = Node(0, Node(0, Node(0, None)))
-#     assert is_equal(scale(zero_factor_node), empty_node)
+def test_scale_factor_zero() -> None:
+    """The factor parameter = 0."""
+    zero_factor_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
+    empty_node: Optional[Node] = Node(0, Node(0, Node(0, None)))
+    assert is_equal(scale(zero_factor_node, 0), empty_node)
 
-# def test_scale_factor_one() -> None:
-#     """The factor parameter = 2."""
-#     scale_test_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
-#     assert scale(scale_test_node, 2) == 2 -> 4 -> 6 -> None
+
+def test_scale_factor_one() -> None:
+    """The factor parameter = 2."""
+    scale_test_node: Optional[Node] = Node(1, Node(2, Node(3, None)))
+    double_node: Optional[Node] = Node(2, Node(4, Node(6, None)))
+    assert is_equal(scale(scale_test_node, 2), double_node)
