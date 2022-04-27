@@ -14,3 +14,6 @@ def repeat(word: str, multip: int) -> str:
             si += 1
         i += 1
     return repeated
+
+
+repeat("comp", 3)
