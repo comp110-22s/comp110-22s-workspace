@@ -39,9 +39,26 @@ def last(head: Optional[Node]) -> int:
     if head is None:
         raise ValueError("last cannot be called with None")
     else:
-        return None
+        if head.next is None:
+            return head.data
+        else:
+            return last(head.next)
 
 
-def value_at(head: Optional[Node], index: int) -> Node:
-    
-    return
+def value_at(head: Optional[Node], index: int) -> Optional[int]:
+    """Find value at index for Node.""" 
+    if head is None:
+        raise IndexError("Index is out of bounds on the list.")
+    else:
+        if index == 0:
+            return head.data
+        else: 
+            index -= 1
+            s = head.next
+            value_at(s, index)
+
+
+# print(value_at(Node(10, Node(20, Node(30, None))), 0))
+# print(value_at(Node(10, Node(20, Node(30, None))), 1))
+# print(value_at(Node(10, Node(20, Node(30, None))), 2))
+# # value_at(Node(10, Node(20, Node(30, None))), 3)
