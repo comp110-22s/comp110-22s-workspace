@@ -45,20 +45,44 @@ def last(head: Optional[Node]) -> int:
             return last(head.next)
 
 
-def value_at(head: Optional[Node], index: int) -> Optional[int]:
-    """Find value at index for Node.""" 
+def value_at(head: Optional[Node], index: int) -> int:
     if head is None:
         raise IndexError("Index is out of bounds on the list.")
+    if index == 0:
+        return head.data
     else:
-        if index == 0:
+        counter: int = index - 1
+        return value_at(head.next, counter)
+
+
+def max(head: Optional[Node]) -> int:
+    if head is None:
+        raise ValueError("Cannot call max with None")
+    if head.next is None:
+        return head.data
+    else:
+        new: int = 0
+        new = max(head.next)
+        if head.data < new:
+            return new
+        else:
             return head.data
-        else: 
-            index -= 1
-            s = head.next
-            value_at(s, index)
 
 
-# print(value_at(Node(10, Node(20, Node(30, None))), 0))
-# print(value_at(Node(10, Node(20, Node(30, None))), 1))
-# print(value_at(Node(10, Node(20, Node(30, None))), 2))
-# # value_at(Node(10, Node(20, Node(30, None))), 3)
+def linkify(items: list[int]) -> Optional[Node]:
+    if len(items) > 0:
+        index: int = 0
+        node_data: int = items[index]
+        items.pop(index)
+        return Node(node_data, linkify(items))
+    else:
+        return None
+
+
+def scale(head: Optional[Node], factor: int) -> Optional[Node]:
+    if head is None:
+        return None
+    else:
+        new_data: int = head.data * 2
+        new_node: Optional[Node] = Node(new_data, scale(head.next, factor))
+        return new_node

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Union, Optional
+from typing import Optional
 
 
 class Node: 
@@ -42,3 +42,4 @@ head = Node(2, None)
 head = Node(1, head)
 print(sum(head))
 print(count(head))
+print(Node(0, None))
