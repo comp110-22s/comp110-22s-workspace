@@ -56,7 +56,7 @@ def test_max_longcase() -> None:
 def test_link_empty() -> None:
     """Test empty list."""
     empty_list: list = []
-    assert linkify(empty_list) == None
+    assert linkify(empty_list) is None
 
 
 def test_complex_case() -> None:
