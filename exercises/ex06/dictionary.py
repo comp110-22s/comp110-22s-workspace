@@ -52,7 +52,7 @@ def favorite_color(colors: dict[str, str]) -> str:
     return result
 
 
-"""Alternate, shitty code."""
+"""Alternate, original code."""
 # # Takes the colors and puts them in a list, new_list.
 # new_list: list[str] = list()
 # new_key: str = ""
