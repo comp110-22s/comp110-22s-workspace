@@ -19,7 +19,7 @@ def determinant(matrix):
     for row in matrix:
         if len(row) != num_rows:
             print("Not a square matrix.")
-            return None
+            return
     # base case that returns a simple determinatrix
     if len(matrix) == 2:
         simp_d = matrix[0][0] * \
